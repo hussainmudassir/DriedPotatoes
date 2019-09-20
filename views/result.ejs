@@ -1,0 +1,22 @@
+<h1>RESULTS</h1>
+
+<ul>
+<% data["Search"].forEach(function(movie){ %>
+    <li>
+        <strong>
+            
+            <form action="/rating" method="GET">
+                <%= movie["Title"]%>               
+                <input type='hidden' name='id' value=<%= movie["imdbID"]%> >
+                <input type="submit" value="Check the rating">
+
+            </form>
+            
+        </strong>
+    </li>
+
+<% }) %>
+</ul>
+
+<a href="/">Search again!</a>
+

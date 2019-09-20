@@ -1,0 +1,27 @@
+<h1>Rating</h1>
+
+<ul><strong>
+    <%= data["Title"]%><br>
+    
+</strong><br>
+    <img src=<%= data["Poster"]%> style="width:150px;height:150px;">
+    <br><li>
+    <h3>Plot</h3><%= data["Plot"]%>
+    </li>
+    <li>
+        <h3>Actors</h3>   <%= data["Actors"]%>
+    </li>
+    <br>
+    <h2>Ratings</h2>
+    <% data["Ratings"].forEach(function(rating){ %>
+        <li>
+            <%= rating["Source"]%>-----
+            <%= rating["Value"]%>
+        </li>
+    <% }) %>
+
+</ul>
+
+<a href="/">Search Again!</a><br>
+<br>
+<a href="/results">Go back to results</a>
