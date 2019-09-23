@@ -1,17 +1,17 @@
-var express = require("express");
-var request = require("request");
+var express = require('express');
+var request = require('request');
 
 
 var app = express();
 
 
-app.set("view engine", 'ejs');
+app.set('view engine', 'ejs');
 
-app.get("/", function(req, res){
+app.get('/', function(req, res){
     res.render('welcome');
 });
 
-app.get("/results", function(req, res){
+app.get('/results', function(req, res){
     var q = req.query.search;
     var url = "http://omdbapi.com/?s=" + q + "&apikey=thewdb";
     request(url, function(error, response, body){
@@ -23,7 +23,7 @@ app.get("/results", function(req, res){
     })
 });
 
-app.get("/rating", function(req, res){
+app.get('/rating', function(req, res){
     var q = req.query.id;
     var url = "http://www.omdbapi.com/?i=" + q +"&apikey=thewdb";
     request(url, function(error, response, body){
